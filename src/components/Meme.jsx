@@ -2,11 +2,19 @@ import memesData from "../memesData.js";
 import { useState } from "react";
 
 export default function Header() {
-  let [memeImage, setMemeImage] = useState("");
+  // let [memeImage, setMemeImage] = useState("https://i.imgflip.com/30b1gx.jpg");
+  
+  let [meme, setMeme] = useState({
+    topText:"",
+    bottomText:"",
+    randomImage:"https://i.imgflip.com/30b1gx.jpg"
+  })
+
+  let [allMemeImages, setAllMemeImages] = useState(memesData)
+
   function getMemeImage() {
     let ind = Math.round(Math.random(0, 1) * 100);
-
-    setMemeImage(memesData.data.memes[ind].url);
+    setMeme(prev =>({ ...prev, randomImage: allMemeImages.data.memes[ind].url}));
   }
 
   return (
@@ -34,7 +42,7 @@ export default function Header() {
       </div>
       <div className="img-container ms-auto me-auto">
 
-        <img className={memeImage==""?'d-none':''} src={memeImage} alt="meme-image"/>
+        <img  src={meme.randomImage} alt="meme-image"/>
       </div>
     </>
   );
