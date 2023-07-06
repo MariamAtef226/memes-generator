@@ -1,0 +1,50 @@
+body {
+  font-family: "Karla", sans-serif !important;
+  margin: 0;
+}
+
+
+/* Header */
+.header{
+  width:100%;
+  height: 85px;
+  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  }
+
+  .form-container{
+    width:50%;
+  }
+
+
+
+  input, button{
+    font-size: 1.3rem !important;
+  }
+  input:active, input:focus, button:active, button:focus{
+    border-color:#672280 !important;
+    outline: #672280 !important;
+    box-shadow: 0 0 0 0.25rem rgba(103, 34, 128,0.5) !important;
+  }
+
+  button{
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%) !important;
+    color:white !important;
+  }
+
+  .img-container img{
+    width:100%
+  }
+
+  .img-container{
+    width:45%;
+  }
+
+  @media (max-width:725px){
+    .form-container{
+      width:100%;
+    }
+    .img-container{
+      width:80%;
+    }
+  
+  }
