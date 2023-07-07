@@ -1,25 +1,33 @@
 import memesData from "../memesData.js";
 import { useState } from "react";
+import { useEffect } from "react";
 
-export default function Header() {
-  // let [memeImage, setMemeImage] = useState("https://i.imgflip.com/30b1gx.jpg");
-
+export default function Meme() {
+  
   let [meme, setMeme] = useState({
     topText: "Text at the top",
     bottomText: "Text at the bottom",
     randomImage: "https://i.imgflip.com/30b1gx.jpg",
   });
 
-  let [allMemeImages, setAllMemeImages] = useState(memesData);
+  let [allMemes, setAllMemes] = useState([]);
 
-  
+  useEffect(function () {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((data) => {
+        setAllMemes(data.data.memes);
+      });
+  }, []);
+
+ 
+
   function getMemeImage() {
-    let ind = Math.round(Math.random(0, 1) * 100);
+    let ind = Math.round(Math.random(0, 1) * allMemes.length);
     setMeme((prev) => ({
       ...prev,
-      randomImage: allMemeImages.data.memes[ind].url,
+      randomImage: allMemes[ind].url,
     }));
-    window.open("", document.getElementById("ss").toDataURL());
   }
 
   function changeHandler(event) {
@@ -32,13 +40,10 @@ export default function Header() {
     });
   }
 
-
-
   return (
     <>
       <div className="d-flex align-items-center p-3 form-container ms-auto me-auto">
         <div className="row g-3 w-100 justify-content-center ms-auto me-auto">
-         
           <div className="col-md-6">
             <input
               type="text"
@@ -48,7 +53,7 @@ export default function Header() {
               name="topText"
             />
           </div>
-         
+
           <div className="col-md-6">
             <input
               type="text"
@@ -58,11 +63,10 @@ export default function Header() {
               name="bottomText"
             />
           </div>
-         
+
           <button onClick={getMemeImage} className="form-control">
             Get a new meme image 🖼
           </button>
-        
         </div>
       </div>
 
@@ -72,7 +76,6 @@ export default function Header() {
         <h2 className="meme--text bottom">{meme.bottomText}</h2>
       </div>
 
-
       {/*}
       <div>
         <button>
@@ -80,7 +83,6 @@ export default function Header() {
           https://stackoverflow.com/questions/52620913/how-to-convert-my-html-div-to-canvas-without-using-html2canvas*
         </button>
       </div>*/}
-
     </>
   );
 }
