@@ -9,12 +9,12 @@ A dynamic interactive webpage for a memes generator. The project is a part of Bo
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" alt="react" width="30" height="30"> __React.js__
 
 ### Pre-requisites :grey_question:
-
-None
+- Node.js (version 14 or higher)
+- npm (version 6 or higher)
 
 ### Link to webpage 🔗
 
-<a href="#"> Click Me! </a>
+<a href="https://memes-generator-mariam-atef.netlify.app/"> Click Me! </a>
 
 ### Author 🖊️
 
