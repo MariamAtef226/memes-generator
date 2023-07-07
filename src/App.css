@@ -3,66 +3,59 @@ body {
   margin: 0;
 }
 
-
 /* Header */
-.header{
-  width:100%;
+.header {
+  width: 100%;
   height: 85px;
-  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
-  }
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+}
 
-  .form-container{
-    width:50%;
-  }
+.form-container {
+  width: 50%;
+}
 
+input,
+button {
+  font-size: 1.3rem !important;
+}
+input:active,
+input:focus,
+button:active,
+button:focus {
+  border-color: #672280 !important;
+  outline: #672280 !important;
+  box-shadow: 0 0 0 0.25rem rgba(103, 34, 128, 0.5) !important;
+}
 
+button {
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%) !important;
+  color: white !important;
+}
 
-  input, button{
-    font-size: 1.3rem !important;
-  }
-  input:active, input:focus, button:active, button:focus{
-    border-color:#672280 !important;
-    outline: #672280 !important;
-    box-shadow: 0 0 0 0.25rem rgba(103, 34, 128,0.5) !important;
-  }
+.img-container img {
+  width: 100%;
+}
 
-  button{
-    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%) !important;
-    color:white !important;
-  }
+.img-container {
+  position: relative;
+  width: 45%;
+}
 
-  .img-container img{
-    width:100%
-  }
-
-  .img-container{
-    position:relative;
-    width:45%;
-  }
-  
-.meme--text {
+.meme-text {
   position: absolute;
-  width: 80%;
+  width: 40%;
   text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
+
   margin: 15px 0;
   padding: 0 5px;
   font-family: impact, sans-serif;
-  font-size: 2em;
+  font-size: 2rem;
   text-transform: uppercase;
   color: white;
   letter-spacing: 1px;
-  text-shadow:
-      2px 2px 0 #000,
-      -2px -2px 0 #000,
-      2px -2px 0 #000,
-      -2px 2px 0 #000,
-      0 2px 0 #000,
-      2px 0 0 #000,
-      0 -2px 0 #000,
-      -2px 0 0 #000,
-      2px 2px 5px #000;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
 }
 
 .bottom {
@@ -73,12 +66,43 @@ body {
   top: 0;
 }
 
-  @media (max-width:725px){
-    .form-container{
-      width:100%;
-    }
-    .img-container{
-      width:80%;
-    }
-  
+.top,
+.bottom {
+  left: 50%;
+  transform: translateX(-50%);
+  width:80%;
+}
+
+.bottomLeft,
+.bottomRight {
+  bottom: 15%;
+}
+
+.topLeft,
+.topRight {
+  top: 15%;
+}
+
+.bottomLeft,
+.topLeft {
+  left: 0px;
+  text-align: center;
+}
+
+.bottomRight,
+.topRight {
+  right: 0;
+  text-align: center;
+}
+
+@media (max-width: 725px) {
+  .form-container {
+    width: 100%;
   }
+  .img-container {
+    width: 80%;
+  }
+  .meme-text{
+    font-size: 1.1rem;;
+  }
+}
