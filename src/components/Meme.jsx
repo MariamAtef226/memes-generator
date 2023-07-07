@@ -124,7 +124,7 @@ export default function Meme() {
         </div>
       </div>
 
-      <div className="meme img-container ms-auto me-auto">
+      <div id="capture" className="meme img-container ms-auto me-auto">
         <img src={meme.randomImage} className="meme--image" />
         <h2 className="meme-text top">{meme.topText}</h2>
         <h2 className="meme-text bottom">{meme.bottomText}</h2>
@@ -134,13 +134,6 @@ export default function Meme() {
         <h2 className="meme-text bottomRight">{meme.bottomRightText}</h2>
       </div>
 
-      {/*}
-      <div>
-        <button>
-          Download
-          https://stackoverflow.com/questions/52620913/how-to-convert-my-html-div-to-canvas-without-using-html2canvas*
-        </button>
-      </div>*/}
     </>
   );
 }
